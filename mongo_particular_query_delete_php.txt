@@ -1,0 +1,15 @@
+<?php
+include('connection.php');
+if($_GET['id'])
+{
+$d=$_GET['id'];
+$collection->remove(array("description"=>$d));
+echo "Documents deleted successfully";
+
+$cursor = $collection->find();
+
+foreach ($cursor as $document) {
+echo $document["title"] . "\n";
+}
+}
+?>

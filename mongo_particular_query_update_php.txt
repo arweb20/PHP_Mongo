@@ -1,0 +1,13 @@
+<?php
+include('connection.php');
+
+$collection->update(array("title"=>"MongoDB"), array('$set'=>array("title"=>"MongoDB Tutorial")));
+
+// now display the updated docum ent
+$cursor = $collection->find();
+// iterate cursor to display title of docum ents
+
+foreach ($cursor as $document) {
+echo $document["title"];
+}
+?><BR><BR><a href="delete.php"><button>DELETE</button></a>

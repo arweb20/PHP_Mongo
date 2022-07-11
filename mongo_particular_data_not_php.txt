@@ -1,0 +1,19 @@
+<?php
+// connect to m ongodb
+$q=array("Date" => array('$ne' => '07-02-2018'));
+
+
+$cursor = $clctn->find($q1);
+// iterate cursor to display title of docum ents
+$n=0;
+foreach ($cursor as $document) {
+$n++;
+$t[]=$document['Date'];
+
+}
+for($i=0;$i<$n;$i++)
+{
+echo date('d-M-Y',strtotime($t[$i])).'<br>';
+
+}
+?>
